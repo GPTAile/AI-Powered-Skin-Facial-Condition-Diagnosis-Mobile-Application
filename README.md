@@ -32,7 +32,7 @@ Create the following folder structure inside the `server/` folder:
 
 ```
 server/
-└── datasets/
+└── dataset/
     ├── train/
     │   ├── Normal Skin/
     │   ├── Acne/
@@ -68,6 +68,17 @@ cd server
 pip install -r requirements.txt
 python train.py
 ```
+
+#### Improving Training Accuracy
+
+If you experience low accuracy, here are adjustments you can make:
+
+- **Increase the number of experiments (epochs):** Set `number_of_experiments` to 20 or 30 so the model has more passes over the dataset.
+- **Check dataset balance:** Ensure each class has a reasonable number of images, and train/test splits are fair.
+- **Enable data augmentation:** Add `enhance_data=True` when calling `trainModel` to improve generalization.
+- **Tune batch size:** Increase `batch_size` (e.g., 32 or 64) if your system memory allows.
+- **Check paths:** Ensure your directory names match exactly (e.g., `dataset/` vs `datasets/`).
+- **Use the correct model file:** After training, select the model with the highest accuracy from `dataset/models/` for classification.
 
 ---
 
@@ -170,3 +181,4 @@ Please open issues or pull requests if you'd like to help improve the app!
 ## 📬 Contact
 
 For support or feedback, email **michaelmudimbu@gmail.com**
+
